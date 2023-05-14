@@ -26,47 +26,65 @@ The execution of the proof of concept is orchestrated by the Controller module. 
 ##### Docker installation
 There is a fully working Docker container image ready to download and run. To do so, follow these instructions:
 - Install docker:
-		apt install docker
+```
+apt install docker
+```
 - Download container image from repository.
 - Run image:
-		docker run --name greens_poc -d greens
+```
+docker run --name greens_poc -d greens
+```
 - Connect to container terminal:
-		docker exec -it greens_poc /bin/bash
+```
+docker exec -it greens_poc /bin/bash
+```
 Then, proceed to usage.
 ##### Execution from source code
 In order to execute source code, dependencies must be installed. 
 - Python installation:
-		apt install python3
-		apt install pip
+```
+apt install python3
+apt install pip
+```
 - Python libraries installation:
-		pip install torch
-		git clone https://github.com/ultralytics/yolov5
-		cd yolov5
-		pip install -r requirements.txt
+```
+pip install torch
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -r requirements.txt
+```
 - R installation
-		apt install R
+```
+apt install R
+```
 - R libraries installation
-		apt install libgdal-dev
+```
+apt install libgdal-dev
+```
 - In R shell:
-		install.packages('geodata', repos='http://cran.us.r-project.org')
-		install.packages('terra', repos='http://cran.us.r-project.org')
-		install.packages('dismo', repos='http://cran.us.r-project.org')
-		install.packages('rJava', repos='http://cran.us.r-project.org')
-		install.packages('raster', repos='http://cran.us.r-project.org')
-
+```
+install.packages('geodata', repos='http://cran.us.r-project.org')
+install.packages('terra', repos='http://cran.us.r-project.org')
+install.packages('dismo', repos='http://cran.us.r-project.org')
+install.packages('rJava', repos='http://cran.us.r-project.org')
+install.packages('raster', repos='http://cran.us.r-project.org')
+```
 Then, proceed to usage.
 ## Usage
 To execute the proof of concept, use:
-
-	python3 /root/codigo/controlador.py
+```
+python3 /root/codigo/controlador.py
+```
 Or, alternatively:
+```
+/root/codigo/controlador.py
+```
 
-	/root/codigo/controlador.py
-
-Main controller program outputs information, but important logs are kept in /root/log/log_file.txt
+Main controller program outputs information, but important logs are kept in /root/log/log_file.txt.
 To watch output live:
-
-	tail -f /root/log/log_file.txt
+```
+tail -f /root/log/log_file.txt
+```
 ## Room for Improvement
 - Output parsing responsibility should be moved from Controller class to a new one.
 - Visualization tool should be used to better show program logs.
