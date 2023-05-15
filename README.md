@@ -17,7 +17,7 @@
 
 
 ## General Information
-Proof of concept for GREENS project. It demonstrates how the different systems and technologies used can be integrated in a simple, lightweight container. GREENS is aimed to detect Nicotiana Glauca. It then updates the map with the new location and known climatic factors and generates new coordinates with high probability of existence for the plant.
+Proof of concept for GREENS project. It demonstrates how the different systems and technologies used can be integrated in a simple, lightweight container. GREENS is aimed to detect Nicotiana Glauca. It then updates the map with the new location and known climatic factors and generates new coordinates with high probability of existence for the plant. Interesting code is found in /codigo/controlador.py (controller and main program), /yolo/yolo.py (decision script for yolo) and /R/DEF_update_map.r (map updating script).
 
 ## Functioning
 The execution of the proof of concept is orchestrated by the Controller module. To simulate real-time vision of environment, the program extracts images one by one from sample folder. Then, it calls YOLO interpretation module and receives a boolean response for wether or not objective plants are detected in it. If the response is positive, it stores current coordinates and generates new ones to go search there. Once there are 10 positive detections, the probability map is updated. The controller cycle repeats until there are no more images in folder.
