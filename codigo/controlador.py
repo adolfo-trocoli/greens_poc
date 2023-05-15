@@ -27,7 +27,7 @@ positive_count = 0
 file_count = 0
 log_file = '/root/log/log_file.txt'
 species_location_file = '/root/R/species_location.csv'
-get_prediction_file = '/root/R/DEF_get_prediction.r'
+get_prediction_file = '/root/R/DEF_update_map.r'
 next_coord_file = '/root/R/DEF_next_move.r'
 open(log_file, 'w').close() # clear log file
 

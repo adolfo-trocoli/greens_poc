@@ -23,7 +23,7 @@ Proof of concept for GREENS project. It demonstrates how the different systems a
 The execution of the proof of concept is orchestrated by the Controller module. To simulate real-time vision of environment, the program extracts images one by one from sample folder. Then, it calls YOLO interpretation module and receives a boolean response for wether or not objective plants are detected in it. If the response is positive, it stores current coordinates and generates new ones to go search there. Once there are 10 positive detections, the probability map is updated. The controller cycle repeats until there are no more images in folder.
 
 ## Setup
-##### Docker installation
+### Docker installation
 There is a fully working Docker container image ready to download and run. To do so, follow these instructions:
 - Install docker:
 ```
@@ -39,7 +39,7 @@ docker run --name greens_poc -d greens
 docker exec -it greens_poc /bin/bash
 ```
 Then, proceed to usage.
-##### Execution from source code
+### Execution from source code
 In order to execute source code, dependencies must be installed. 
 - Python installation:
 ```
@@ -53,6 +53,10 @@ git clone https://github.com/ultralytics/yolov5
 cd yolov5
 pip install -r requirements.txt
 ```
+- Java installation
+```
+apt install -y openjdk-8-jdk openjdk-8-jre
+```
 - R installation
 ```
 apt install R
@@ -60,6 +64,10 @@ apt install R
 - R libraries installation
 ```
 apt install libgdal-dev
+```
+- Configure Java JDK for R
+```
+R CMD javareconf JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 ```
 - In R shell:
 ```
