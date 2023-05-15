@@ -30,6 +30,9 @@ There is a fully working Docker container image ready to download and run. To do
 apt install docker
 ```
 - Download container image from repository.
+```
+docker pull adolfotrocoli/greens_poc
+```
 - Run image:
 ```
 docker run --name greens_poc -d greens
